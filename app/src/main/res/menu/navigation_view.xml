@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item
+
+        android:id="@+id/latest"
+        android:icon="@drawable/home"
+        android:title="@string/latest" />
+
+    <item
+        android:id="@+id/category"
+        android:icon="@drawable/categori"
+        android:title="@string/category" />
+
+    <item
+        android:id="@+id/hit"
+        android:icon="@drawable/gif"
+        android:title="HIT" />
+
+    <item
+        android:id="@+id/myfavprites"
+        android:icon="@drawable/my_fatori"
+        android:title="@string/myfavorites" />
+
+
+
+    <item
+        android:id="@+id/aboutus"
+        android:icon="@drawable/i"
+        android:title="@string/aboutus" />
+
+
+
+    <item
+        android:id="@+id/logout"
+        android:icon="@drawable/lock"
+        android:title="Logout" />
+
+</menu>

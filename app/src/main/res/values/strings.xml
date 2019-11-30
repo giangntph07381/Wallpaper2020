@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Wallpaper</string>
+    <string name="latest">Latest</string>
+    <string name="category">Category</string>
+    <string name="gifs">GIFs</string>
+    <string name="myfavorites">My Favorites</string>
+    <string name="rateapp">Rate App</string>
+    <string name="moreapp">More App</string>
+    <string name="aboutus">About Us</string>
+    <string name="setting">Setting</string>
+    <string name="privacy">Privacy Police</string>
+    <string name="hello">Amazing Wallpaper in your way</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="share" />
+    <string name="save" />
+    <string name="set" />
+    <string name="love" />
+    <string name="loading">Đang tải</string>
+    <string name="dang_nhap">Đăng Nhập</string>
+    <string name="dang_ky">Đăng Ký</string>
+    <string name="remember">Remember Passwork</string>
+    <string name="login">LOGIN</string>
+    <string name="passwork">Passwork</string>
+    <string name="moinhap"> Mời Bạn Nhập Tài Khoản</string>
+    <string name="moinhapmatkhau">Mời Nhập Mật Khẩu</string>
+    <string name="nhaplaimatkhau">Nhập Lại Mật Khẩu</string>
+    <string name="exit">Exit</string>
+</resources>
