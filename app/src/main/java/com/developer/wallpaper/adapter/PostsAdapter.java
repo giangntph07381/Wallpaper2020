@@ -1,5 +1,6 @@
 package com.developer.wallpaper.adapter;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,17 +25,34 @@ public class PostsAdapter extends BaseAdapter {
     private PostsAdapterListener listener;
     private int wid;
 
-    public PostsAdapter(List<Post> postList, PostsAdapterListener listener, int wid) {
-        this.postList = postList;
+    public PostsAdapter(PostsAdapterListener listener, int wid) {
         this.listener = listener;
         this.wid = wid;
     }
 
+    public List<Post> getPostList() {
+        return postList;
+    }
+
+    public void setPostList(List<Post> postList) {
+        this.postList = postList;
+        notifyDataSetChanged();
+    }
+
+    public void clearlist(){
+        postList.clear();
+        postList=null;
+        notifyDataSetChanged();
+    }
+
     @Override
     public int getCount() {
-        if (postList.isEmpty()){
+        if (postList==null){
             return 0;
-        }return postList.size();
+        }else
+            Log.e("adaptersize",postList.size()+"");
+        return
+        postList.size();
     }
 
     @Override

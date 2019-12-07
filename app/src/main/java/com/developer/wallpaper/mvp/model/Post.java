@@ -5,15 +5,23 @@ import android.widget.ImageView;
 import androidx.databinding.BindingAdapter;
 
 import com.bumptech.glide.Glide;
+import com.squareup.picasso.Picasso;
 
-public class Post {
+import java.io.Serializable;
+
+public class Post implements Serializable {
     public String imageUrl;
+
+    public Post() {
+    }
+
+    public Post(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
 
     @BindingAdapter("imageUrl")
     public static void loadImage(ImageView view, String imageUrl) {
-        Glide.with(view.getContext())
-                .load(imageUrl)
-                .into(view);
+        Picasso.get().load(imageUrl).centerCrop().fit().into(view);
     }
 
     public String getImageUrl() {
