@@ -17,7 +17,7 @@ public class Category extends FragmentData {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.category, container, false);
+//        view = inflater.inflate(R.layout.Category, container, false);
         return view;
 
     }

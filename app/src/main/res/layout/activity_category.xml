@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.Category">
+
+
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nes"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+       <LinearLayout
+           android:orientation="vertical"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:onClick="hotboy"
+            android:layout_width="match_parent"
+            android:layout_height="180dp">
+
+            <ImageView
+                android:scaleType="centerCrop"
+                android:src="@drawable/boy"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"/>
+            <TextView
+                android:textSize="20dp"
+                android:textColor="#FFF"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_alignParentBottom="true"
+                android:text="BOY"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </RelativeLayout>
+           <RelativeLayout
+               android:onClick="girl"
+               android:layout_width="match_parent"
+               android:layout_height="180dp">
+
+
+               <ImageView
+                   android:scaleType="centerCrop"
+                   android:src="@drawable/girl"
+                   android:layout_width="match_parent"
+                   android:layout_height="180dp"/>
+               <TextView
+                   android:textSize="20dp"
+                   android:textColor="#FFF"
+                   android:textStyle="bold"
+                   android:gravity="center"
+                   android:layout_alignParentBottom="true"
+                   android:text="GIRL"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"/>
+
+           </RelativeLayout>
+           <RelativeLayout
+               android:onClick="car"
+               android:layout_width="match_parent"
+               android:layout_height="180dp">
+
+
+               <ImageView
+                   android:scaleType="centerCrop"
+                   android:src="@drawable/car1"
+                   android:layout_width="match_parent"
+                   android:layout_height="180dp"/>
+               <TextView
+                   android:textSize="20dp"
+                   android:textColor="#FFF"
+                   android:textStyle="bold"
+                   android:gravity="center"
+                   android:layout_alignParentBottom="true"
+                   android:text="CAR"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"/>
+
+           </RelativeLayout>
+           <RelativeLayout
+               android:onClick="nature"
+               android:layout_width="match_parent"
+               android:layout_height="180dp">
+
+
+               <ImageView
+                   android:scaleType="centerCrop"
+                   android:src="@drawable/nature1"
+                   android:layout_width="match_parent"
+                   android:layout_height="180dp"/>
+               <TextView
+                   android:textSize="20dp"
+                   android:textColor="#FFF"
+                   android:textStyle="bold"
+                   android:gravity="center"
+                   android:layout_alignParentBottom="true"
+                   android:text="NATURE"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"/>
+
+           </RelativeLayout>
+           <RelativeLayout
+               android:onClick="animal"
+               android:layout_width="match_parent"
+               android:layout_height="180dp">
+
+
+               <ImageView
+                   android:scaleType="centerCrop"
+                   android:src="@drawable/animal"
+                   android:layout_width="match_parent"
+                   android:layout_height="180dp"/>
+               <TextView
+                   android:textSize="20dp"
+                   android:textColor="#FFF"
+                   android:textStyle="bold"
+                   android:gravity="center"
+                   android:layout_alignParentBottom="true"
+                   android:text="ANIMAL"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"/>
+
+           </RelativeLayout>
+    </LinearLayout>
+
+
+
+
+
+
+    </androidx.core.widget.NestedScrollView>
+
+</RelativeLayout>

@@ -30,12 +30,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class Latets extends FragmentData implements PostsAdapter.PostsAdapterListener , Listen {
+public class Latets extends FragmentData implements PostsAdapter.PostsAdapterListener, Listen {
 
 
     private LatetsBinding setgridview;
     private PostsAdapter postsAdapter;
-    private static final String URL="https://pixabay.com/vi/photos/search/thien%20nhien/?cat=people&order=latest&orientation=vertical";
+    private static final String URL = "https://pixabay.com/vi/photos/search/thien%20nhien/?cat=people&order=latest&orientation=vertical";
     private SwipeRefreshLayout swipeRefreshLayout;
 
 
@@ -47,7 +47,7 @@ public class Latets extends FragmentData implements PostsAdapter.PostsAdapterLis
 
         //Khởi tạo  adapter GridView
         postsAdapter = new PostsAdapter(Latets.this, getwidth());
-        swipeRefreshLayout=setgridview.getRoot().findViewById(R.id.refesh);
+        swipeRefreshLayout = setgridview.getRoot().findViewById(R.id.refesh);
         //Update GridView bằng Databinding
         setgridview.setAdapter(new SetAdapter(postsAdapter));
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
@@ -59,13 +59,17 @@ public class Latets extends FragmentData implements PostsAdapter.PostsAdapterLis
             }
         });
 
-        new DowloadUrlAsyncTask(this).execute(URL);
+        if (getShownURL()==null) {
+            new DowloadUrlAsyncTask(this).execute(URL);
+        } else {
+            new DowloadUrlAsyncTask(this).execute(getShownURL());
+        }
+
         return setgridview.getRoot();
     }
 
 
     //Update List ảnh tùy thích Url hoặc Uri
-
 
 
     //Lấy chiều rộng hiện tại của Phone
@@ -78,16 +82,16 @@ public class Latets extends FragmentData implements PostsAdapter.PostsAdapterLis
     //Code khi click  item GridView tại đây
     @Override
     public void onPostClicked(Post post, int position) {
-        Intent intent=new Intent(getContext(), IMG.class);
-        intent.putExtra("post",post);
+        Intent intent = new Intent(getContext(), IMG.class);
+        intent.putExtra("post", post);
         startActivity(intent);
     }
 
     @Override
     public void ThanhCong(List<Post> list) {
         swipeRefreshLayout.setRefreshing(false);
-        if (postsAdapter.getPostList()==null){
-            Log.e("List",list.size()+"");
+        if (postsAdapter.getPostList() == null) {
+            Log.e("List", list.size() + "");
             setgridview.setIs(new Loading("abc"));
             postsAdapter.setPostList(list);
         }
@@ -97,4 +101,22 @@ public class Latets extends FragmentData implements PostsAdapter.PostsAdapterLis
     public void ThatBai() {
         Toast.makeText(getContext(), "Lỗi.Vui lòng thử lại", Toast.LENGTH_SHORT).show();
     }
+
+    public static Latets newInstance(String url) {
+        Latets fragment = new Latets();
+        Bundle args = new Bundle();
+        args.putString("URL", url);
+        fragment.setArguments(args);
+        return fragment;
+    }
+
+    public String getShownURL() {
+        if (getArguments()!=null){
+            return getArguments().getString("URL", "");
+        }else {
+            return null;
+        }
+    }
+
+
 }

@@ -23,21 +23,13 @@
             android:scaleType="centerCrop"
             bind:imageUrl="@{post.imageUrl}"/>
 
-        <View
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_margin="15dp"
-            android:background="@drawable/shape_back"
-            android:alpha="0.5"/>
-
         <ImageView
             android:onClick="thoat"
             android:padding="8dp"
-            android:background="@drawable/shape_back"
             android:layout_margin="15dp"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:src="@drawable/back"/>
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/back1"/>
 
 
 
@@ -47,26 +39,31 @@
             android:layout_width="wrap_content"
             android:layout_marginBottom="30dp"
             android:layout_marginRight="30dp"
-            android:layout_height="150dp"
+            android:layout_height="200dp"
             android:orientation="vertical">
+            <ImageView
+                android:id="@+id/share"
+                android:padding="8dp"
+                android:layout_margin="15dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/share1"/>
 
             <ImageView
                 android:id="@+id/set"
                 android:padding="8dp"
-                android:background="@drawable/shape_back"
                 android:layout_margin="15dp"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:src="@drawable/save"/>
+                android:src="@drawable/sav"/>
 
             <ImageView
                 android:id="@+id/save"
                 android:padding="8dp"
-                android:background="@drawable/shape_back"
                 android:layout_margin="15dp"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:src="@drawable/download"/>
+                android:src="@drawable/dow"/>
 
 
         </LinearLayout>

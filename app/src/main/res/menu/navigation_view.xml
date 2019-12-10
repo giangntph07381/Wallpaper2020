@@ -14,10 +14,6 @@
         android:icon="@drawable/categori"
         android:title="@string/category" />
 
-    <item
-        android:id="@+id/hit"
-        android:icon="@drawable/gif"
-        android:title="HIT" />
 
     <item
         android:id="@+id/myfavprites"

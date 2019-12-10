@@ -11,6 +11,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
@@ -20,7 +21,6 @@ import android.view.WindowManager;
 import com.developer.wallpaper.LoginActivity;
 import com.developer.wallpaper.R;
 import com.developer.wallpaper.views.fragment.AboutUS;
-import com.developer.wallpaper.views.fragment.Category;
 import com.developer.wallpaper.views.fragment.Latets;
 import com.developer.wallpaper.views.fragment.MyLove;
 import com.google.android.material.navigation.NavigationView;
@@ -65,30 +65,45 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
             }
         });
 
-        addfragment(R.id.latest);
+        Intent intent=getIntent();
+        if (intent!=null){
+            String url=intent.getStringExtra("URL");
+            String title=intent.getStringExtra("TITLE");
+            if (url!=null){
+                addfragment(R.id.latest,url,title);
+            } else {
+                addfragment(R.id.latest,null,null);
+            }
+        }else {
+            addfragment(R.id.latest,null,null);
+        }
+
 
 
     }
 
 
-    private void addfragment(int id) {
+    private void addfragment(int id,String url,String title) {
 
         FragmentTransaction ft_add = fm.beginTransaction();
         switch (id) {
             case R.id.latest:
-                getSupportActionBar().setTitle("Latest");
-                ft_add.replace(R.id.framlayout, new Latets());
+                Latets latets=new Latets();
+                if (url!=null){
+                    getSupportActionBar().setTitle(title);
+                    latets.setArguments(getIntent().getExtras());
+                    ft_add.replace(R.id.framlayout, latets);
+                    Log.e("a",url);
+                }else {
+                    getSupportActionBar().setTitle("Latest");
+                    ft_add.replace(R.id.framlayout, latets);
+                    Log.e("a","null");
+                }
                 ft_add.commit();
                 break;
             case R.id.category:
-                getSupportActionBar().setTitle("Category");
-                ft_add.replace(R.id.framlayout, new Category());
-                ft_add.commit();
-                break;
-            case R.id.hit:
-                getSupportActionBar().setTitle("HIT");
-                ft_add.replace(R.id.framlayout, new Category());
-                ft_add.commit();
+                Intent intent = new Intent(Home.this, Category.class);
+                startActivity(intent);
                 break;
             case R.id.myfavprites:
                 getSupportActionBar().setTitle("My Favorites");
@@ -116,18 +131,18 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         switch (menuItem.getItemId()) {
             case R.id.latest:
-                addfragment(R.id.latest);
+                addfragment(R.id.latest,null,null);
                 break;
 
             case R.id.category:
-                addfragment(R.id.category);
+                addfragment(R.id.category,null,null);
                 break;
             case R.id.myfavprites:
-                addfragment(R.id.myfavprites);
+                addfragment(R.id.myfavprites,null,null);
                 break;
 
             case R.id.aboutus:
-                addfragment(R.id.aboutus);
+                addfragment(R.id.aboutus,null,null);
 
                 break;
             case R.id.logout:

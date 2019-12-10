@@ -25,7 +25,7 @@ public class PostsAdapter extends BaseAdapter {
     private PostsAdapterListener listener;
     private int wid;
 
-    public PostsAdapter(PostsAdapterListener listener, int wid) {
+    public  PostsAdapter(PostsAdapterListener listener, int wid) {
         this.listener = listener;
         this.wid = wid;
     }
