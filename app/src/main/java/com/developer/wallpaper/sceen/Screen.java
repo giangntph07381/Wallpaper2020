@@ -25,7 +25,7 @@ public class Screen extends AppCompatActivity {
         new Timer().schedule(new TimerTask() {
             @Override
             public void run() {
-                startActivity(new Intent(Screen.this, LoginActivity.class));
+                startActivity(new Intent(Screen.this, Home.class));
                 finish();
             }
         },2000);

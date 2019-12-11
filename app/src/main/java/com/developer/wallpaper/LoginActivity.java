@@ -15,17 +15,15 @@ public class LoginActivity extends Activity {
 
     }
 
-
-    public void login(View view) {
-        Intent intent = new Intent(LoginActivity.this, Home.class);
-        startActivity(intent);
-
-    }
-    public void dangky(View view) {
-        Intent intent = new Intent(LoginActivity.this,CreateAccount.class);
-        startActivity(intent);
-        finish();
-
-    }
+//
+//    public void login(View view) {
+//        Intent intent = new Intent(LoginActivity.this, Home.class);
+//        startActivity(intent);
+//
+//    }
+//    public void dangky(View view) {
+//        Intent intent = new Intent(LoginActivity.this,CreateAccount.class);
+//        startActivity(intent);
+//        finish();
 
 }

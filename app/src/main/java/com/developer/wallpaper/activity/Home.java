@@ -34,6 +34,8 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
     private Toolbar toolbar;
     public ActionBarDrawerToggle toggle;
     private FragmentManager fm;
+    private FragmentTransaction ft_add;
+    private boolean is=false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,7 +87,7 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
 
     private void addfragment(int id,String url,String title) {
 
-        FragmentTransaction ft_add = fm.beginTransaction();
+         ft_add = fm.beginTransaction();
         switch (id) {
             case R.id.latest:
                 Latets latets=new Latets();
@@ -104,6 +106,7 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
             case R.id.category:
                 Intent intent = new Intent(Home.this, Category.class);
                 startActivity(intent);
+                is=true;
                 break;
             case R.id.myfavprites:
                 getSupportActionBar().setTitle("My Favorites");
@@ -145,12 +148,6 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
                 addfragment(R.id.aboutus,null,null);
 
                 break;
-            case R.id.logout:
-                Intent intent=new Intent(Home.this, LoginActivity.class);
-                intent.putExtra("data",false);
-                startActivity(intent);
-
-                break;
 
         }
         drawerLayout.closeDrawer(GravityCompat.START);
@@ -171,4 +168,16 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
 
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (is){
+            Latets latets=new Latets();
+            getSupportActionBar().setTitle("Latest");
+            ft_add.replace(R.id.framlayout, latets);
+            Log.e("a","null");
+            ft_add.commit();
+            is=false;
+        }
+    }
 }

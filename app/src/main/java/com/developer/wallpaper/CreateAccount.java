@@ -10,15 +10,15 @@ public class CreateAccount extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_account);
-    }
-
-    public void exit(View view) {
-        Intent intent = new Intent(CreateAccount.this,LoginActivity.class);
-        startActivity(intent);
-    }
-
-    public void add(View view) {
-        Intent intent = new Intent(CreateAccount.this,LoginActivity.class);
-        startActivity(intent);
-    }
+//    }
+//
+//    public void exit(View view) {
+//        Intent intent = new Intent(CreateAccount.this,LoginActivity.class);
+//        startActivity(intent);
+//    }
+//
+//    public void add(View view) {
+//        Intent intent = new Intent(CreateAccount.this,LoginActivity.class);
+//        startActivity(intent);
+   }
 }

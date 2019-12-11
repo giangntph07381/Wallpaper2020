@@ -29,9 +29,5 @@
 
 
 
-    <item
-        android:id="@+id/logout"
-        android:icon="@drawable/lock"
-        android:title="Logout" />
 
 </menu>
